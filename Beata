@@ -3,313 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wszystkiego Najlepszego! 💙</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Wszystkiego Najlepszego, Aniu! 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --chelsea-blue: #034694;
-            --chelsea-yellow: #EE242C;
-            --dark-bg: #050a17;
-            --text-light: #ffffff;
-            --text-gray: #a0aec0;
+            --soft-pink: #f4dada;
+            --dusty-rose: #d4a5a5;
+            --warm-beige: #fdf5f5;
+            --text-dark: #4a3f3f;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            background-color: var(--warm-beige);
+            color: var(--text-dark);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            position: relative;
-            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
             cursor: pointer;
         }
 
-        /* --- EKRAN POWITALNY --- */
+        /* EKRAN POWITALNY */
         #welcome-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: #050a17;
-            background-image: radial-gradient(circle at 50% 50%, rgba(3, 70, 148, 0.4) 0%, #050a17 80%);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: var(--soft-pink);
+            z-index: 9999; display: flex; justify-content: center; align-items: center;
             transition: opacity 0.8s ease-out;
         }
 
         .gift-btn {
-            background: var(--chelsea-blue);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            padding: 20px 50px;
-            font-size: 1.5rem;
-            font-weight: 800;
-            border-radius: 50px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 10px 30px rgba(3, 70, 148, 0.8);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: pulse-btn 2s infinite;
+            background: var(--dusty-rose); color: white; border: none;
+            padding: 20px 40px; font-size: 1.2rem; border-radius: 50px;
+            cursor: pointer; text-transform: uppercase; letter-spacing: 2px;
         }
 
-        .gift-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(3, 70, 148, 1);
-        }
-
-        @keyframes pulse-btn {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* --- GALERIA W TLE --- */
-        .bg-gallery {
-            position: fixed;
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-            overflow: hidden;
-            background-image: radial-gradient(circle at 20% 30%, rgba(3, 70, 148, 0.2) 0%, transparent 60%),
-                              radial-gradient(circle at 80% 70%, rgba(238, 36, 44, 0.1) 0%, transparent 50%);
-        }
-
-        .bg-photo {
-            position: absolute;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.9);
-            opacity: 0.85; /* Zwiększona widoczność (było 0.55) */
-            object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.25); /* Jaśniejsza ramka */
-            transition: all 0.5s ease;
-        }
-
-        .p1 { top: 4%; left: 5%; width: 30vw; max-width: 380px; transform: rotate(-10deg); }
-        .p2 { top: 6%; right: 4%; width: 28vw; max-width: 350px; transform: rotate(10deg); }
-        .p3 { bottom: 5%; left: 5%; width: 29vw; max-width: 360px; transform: rotate(8deg); }
-        .p4 { bottom: 3%; right: 4%; width: 32vw; max-width: 400px; transform: rotate(-6deg); }
-        .p5 { top: 50%; left: 50%; width: 40vw; max-width: 450px; transform: translate(-50%, -50%) rotate(-3deg); opacity: 0.35; z-index: -2; } /* Zwiększona widoczność z 0.15 na 0.35 */
-
-        /* --- GŁÓWNA KARTA Z ŻYCZENIAMI --- */
+        /* KARTA */
         .card {
-            background: rgba(10, 17, 40, 0.85);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            width: 100%;
-            max-width: 550px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
-            border-top: 5px solid var(--chelsea-blue);
-            z-index: 10;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--soft-pink);
+            border-radius: 30px;
+            width: 100%; max-width: 500px; padding: 50px 30px;
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .emblem {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 15px auto;
-            animation: pulse 2s infinite;
-        }
-
-        .music-btn {
-            background: transparent;
-            color: rgba(255,255,255,0.5);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-size: 0.7rem;
-            cursor: pointer;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .music-btn:hover { color: #fff; border-color: #fff; }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .sub-title {
-            color: #00e5ff;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-        }
-
-        /* --- ULEPSZONY STYL ŻYCZEŃ --- */
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; color: #333; }
+        
         .wishes {
-            background: rgba(255, 255, 255, 0.06);
-            padding: 25px; 
-            border-radius: 12px;
-            margin-bottom: 35px;
-            border-left: 4px solid var(--chelsea-yellow);
-            text-align: justify; 
-            line-height: 1.7; 
+            margin: 30px 0; font-size: 1.1rem; line-height: 1.8;
+            text-align: justify; color: #555; font-style: italic;
         }
-
-        .wishes p { 
-            margin-bottom: 15px; 
-            color: #e2e8f0; 
-            font-size: 0.95rem; 
-        }
-
-        .roast-quote {
-            display: block;
-            margin-top: 10px;
-            font-style: italic;
-            color: #cbd5e1;
-            text-align: center;
-        }
-
-        .wishes p:last-child { 
-            margin-bottom: 0; 
-            text-align: center; 
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .invitation-box { margin-bottom: 30px; }
-        .invitation-text { font-size: 1.05rem; color: var(--text-gray); margin-bottom: 25px; line-height: 1.5; }
-        .invitation-text strong { color: #fff; }
 
         .btn {
-            display: inline-block;
-            background: var(--chelsea-blue);
-            color: white;
-            text-decoration: none;
-            padding: 16px 35px;
-            font-weight: 700;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(3, 70, 148, 0.6);
+            display: inline-block; background: var(--dusty-rose); color: white;
+            padding: 15px 30px; border-radius: 50px; text-decoration: none;
+            font-weight: 600; margin-top: 20px; cursor: pointer; border: none;
         }
-
-        .btn:hover {
-            background: #0558b8;
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(3, 70, 148, 0.9);
-        }
-
-        .footer-text { margin-top: 25px; font-size: 0.85rem; color: var(--text-gray); font-weight: 600; }
-
-        @media (max-width: 768px) {
-            .bg-photo { opacity: 0.65; } /* Zwiększona widoczność na telefonach z 0.35 na 0.65 */
-            .p1 { width: 45vw; top: -2%; left: -5%; }
-            .p2 { width: 40vw; top: 2%; right: -5%; }
-            .p3 { width: 45vw; bottom: -2%; left: -5%; }
-            .p4 { width: 50vw; bottom: -5%; right: -10%; }
-            .p5 { display: none; }
-            .card { padding: 30px 20px; }
-        }
+        
+        .music-btn { margin-top: 20px; font-size: 0.8rem; color: #999; cursor: pointer; background: none; border: none; }
     </style>
 </head>
 <body>
 
     <div id="welcome-screen">
-        <button class="gift-btn" onclick="openGift()">Otwórz prezent 🎁</button>
-    </div>
-
-    <div class="bg-gallery">
-        <img src="1.jpg" class="bg-photo p1" alt="Wspomnienie 1">
-        <img src="2.jpg" class="bg-photo p2" alt="Wspomnienie 2">
-        <img src="3.jpg" class="bg-photo p3" alt="Wspomnienie 3">
-        <img src="4.jpg" class="bg-photo p4" alt="Wspomnienie 4">
-        <img src="5.jpg" class="bg-photo p5" alt="Wspomnienie 5">
+        <button class="gift-btn" onclick="openGift()">Otwórz prezent 🌸</button>
     </div>
 
     <div class="card">
+        <h1>Dla Ani</h1>
         
-        <div class="emblem">
-            <img src="logo.webp" alt="Chelsea FC Logo" width="100%">
-        </div>
-
-        <audio id="chelseaAudio" src="hymn.mp3" loop></audio>
+        <audio id="sanahAudio" src="sanah.mp3" loop></audio>
         
-        <button id="musicToggleBtn" class="music-btn" onclick="toggleMusic(event)">Wycisz muzykę</button>
-        
-        <h1>Sto Lat!</h1>
-        <div class="sub-title">Bryan</div>
-
         <div class="wishes">
-            <p>Z okazji urodzin życzymy Ci wszystkiego, co najlepsze! Wielu sukcesów, zdrowia, spełnienia marzeń oraz emocji – nie tylko tych przed telewizorem, ale przede wszystkim na stadionie.</p>
-            <p>Co by koledzy pomagali Ci się wspinać po kamyckach, a droga na rowerze była równą. I pamiętaj: 
-            <span class="roast-quote">„Jak tylko wszedłeś, wykryto niski poziom IQ. Twój pysk jak Raffaello wyraża więcej niż tysiąc słów”</span></p>
-            <p>Niech The Blues zawsze grają po naszej myśli! 💙</p>
+            <p>Z okazji tak wyjątkowego jubileuszu dziękuję Ci za to, że jesteś. Życzę Ci, abyś zawsze czuła się ważna i kochana. Niech Twoja mądrość i życiowe doświadczenie rozświetlają kolejne lata, a w sercu zawsze niech gra muzyka.</p>
+            <p>Życzę Ci, aby Twoje serce wciąż biło z młodzieńczą pasją, a każdy kolejny dzień przynosił spokój i harmonię. Niech Twoja mądrość, doświadczenie i dobroć, którymi obdarzasz wszystkich wokół, wracają do Ciebie ze zdwojoną siłą.</p>
+            <p style="text-align: center; font-weight: bold; margin-top: 20px;">Bądź szczęśliwa każdego dnia!</p>
         </div>
 
-        <div class="invitation-box">
-            <p class="invitation-text">
-                Prezent z tej okazji nie mógł być inny. Trzeba poczuć atmosferę Stamford Bridge ponownie na żywo! Oto budżet na Twój <strong>Chelsea FC Membership</strong>. Odbierz środki i ruszamy na mecz!
-            </p>
-            <button onclick="odbierzPrezent()" class="btn">Odbierz 200 PLN na Membership</button>
-        </div>
-
-        <p class="footer-text">Niebiescy bracia Kubuś i Mrozik 🔵</p>
+        <button onclick="odbierzPrezent()" class="btn">Odbierz bilet na koncert 🎫</button>
+        <br>
+        <button class="music-btn" onclick="toggleMusic()">Włącz/Wyłącz muzykę</button>
     </div>
 
     <script>
-        var audio = document.getElementById("chelseaAudio");
-        var btn = document.getElementById("musicToggleBtn");
-
+        var audio = document.getElementById("sanahAudio");
+        
         function openGift() {
-            audio.play().catch(e => console.log("Przeglądarka zablokowała audio: " + e));
-            
-            var welcomeScreen = document.getElementById('welcome-screen');
-            welcomeScreen.style.opacity = '0';
-            setTimeout(() => {
-                welcomeScreen.style.display = 'none';
-            }, 800);
+            audio.play().catch(e => {});
+            document.getElementById('welcome-screen').style.opacity = '0';
+            setTimeout(() => document.getElementById('welcome-screen').style.display = 'none', 800);
         }
 
-        function toggleMusic(event) {
-            if (audio.paused) {
-                audio.play();
-                btn.innerHTML = "Wycisz muzykę";
-            } else {
-                audio.pause();
-                btn.innerHTML = "Włącz muzykę";
-            }
+        function toggleMusic() {
+            audio.paused ? audio.play() : audio.pause();
         }
 
         function odbierzPrezent() {
-            var pin = prompt("Zabezpieczenie antykradzieżowe 🛡️\nPodaj tajne hasło, aby odebrać prezent:");
-            
-            if (pin && pin.toLowerCase() === "gorczyca") {
+            var pin = prompt("Podaj tajne hasło:");
+            if (pin && pin.toLowerCase() === "Ania") {
                 window.open("https://revolut.me/p/NCEE9K2tbK", "_blank");
             } else {
-                alert("Pudło! To nie to hasło. Spróbuj jeszcze raz.");
+                alert("Nieprawidłowe hasło Aniu.");
             }
         }
     </script>
