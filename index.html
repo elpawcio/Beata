@@ -16,7 +16,11 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            background-color: var(--warm-beige);
+            /* Tło z grafiką sanah */
+            background: linear-gradient(rgba(253, 245, 245, 0.7), rgba(253, 245, 245, 0.7)), url('sanah.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--text-dark);
             display: flex;
             justify-content: center;
@@ -24,7 +28,6 @@
             min-height: 100vh;
             padding: 20px;
             font-family: 'Montserrat', sans-serif;
-            cursor: pointer;
         }
 
         /* EKRAN POWITALNY */
@@ -43,27 +46,32 @@
 
         /* KARTA */
         .card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.85);
             border: 1px solid var(--soft-pink);
             border-radius: 30px;
-            width: 100%; max-width: 500px; padding: 50px 30px;
-            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 100%; max-width: 500px; padding: 40px 30px;
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; color: #333; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 5px; color: #333; }
         
+        /* Przycisk muzyki pod "Dla Ani" */
+        .music-btn { 
+            display: block; margin: 0 auto 20px auto; font-size: 0.75rem; 
+            color: #888; cursor: pointer; background: none; border: 1px solid #ddd;
+            padding: 4px 12px; border-radius: 20px; text-transform: uppercase;
+        }
+
         .wishes {
-            margin: 30px 0; font-size: 1.1rem; line-height: 1.8;
+            margin: 20px 0; font-size: 1.05rem; line-height: 1.7;
             text-align: justify; color: #555; font-style: italic;
         }
 
         .btn {
             display: inline-block; background: var(--dusty-rose); color: white;
             padding: 15px 30px; border-radius: 50px; text-decoration: none;
-            font-weight: 600; margin-top: 20px; cursor: pointer; border: none;
+            font-weight: 600; margin-top: 10px; cursor: pointer; border: none;
         }
-        
-        .music-btn { margin-top: 20px; font-size: 0.8rem; color: #999; cursor: pointer; background: none; border: none; }
     </style>
 </head>
 <body>
@@ -74,18 +82,17 @@
 
     <div class="card">
         <h1>Dla Ani</h1>
+        <button class="music-btn" onclick="toggleMusic()">🎵 Włącz/Wyłącz muzykę</button>
         
         <audio id="sanahAudio" src="sanah.mp3" loop></audio>
         
         <div class="wishes">
             <p>Z okazji tak wyjątkowego jubileuszu dziękuję Ci za to, że jesteś. Życzę Ci, abyś zawsze czuła się ważna i kochana. Niech Twoja mądrość i życiowe doświadczenie rozświetlają kolejne lata, a w sercu zawsze niech gra muzyka.</p>
             <p>Życzę Ci, aby Twoje serce wciąż biło z młodzieńczą pasją, a każdy kolejny dzień przynosił spokój i harmonię. Niech Twoja mądrość, doświadczenie i dobroć, którymi obdarzasz wszystkich wokół, wracają do Ciebie ze zdwojoną siłą.</p>
-            <p style="text-align: center; font-weight: bold; margin-top: 20px;">Bądź szczęśliwa każdego dnia!</p>
+            <p style="text-align: center; font-weight: bold; margin-top: 15px;">Bądź szczęśliwa każdego dnia!</p>
         </div>
 
         <button onclick="odbierzPrezent()" class="btn">Odbierz bilet na koncert 🎫</button>
-        <br>
-        <button class="music-btn" onclick="toggleMusic()">Włącz/Wyłącz muzykę</button>
     </div>
 
     <script>
@@ -102,11 +109,13 @@
         }
 
         function odbierzPrezent() {
-            var pin = prompt("Podaj tajne hasło:");
-            if (pin && pin.toLowerCase() === "Ania") {
+            var pin = prompt("Zabezpieczenie antykradzieżowe 🛡️\nPodaj tajne hasło, aby odebrać prezent:");
+            var ukryteHaslo = "YW5pYQ=="; // "ania"
+            
+            if (pin && btoa(pin.toLowerCase()) === ukryteHaslo) {
                 window.open("https://revolut.me/p/NCEE9K2tbK", "_blank");
             } else {
-                alert("Nieprawidłowe hasło Aniu.");
+                alert("Pudło! To nie to hasło. Spróbuj jeszcze raz.");
             }
         }
     </script>
