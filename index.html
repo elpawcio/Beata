@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wszystkiego Najlepszego, Aniu! 🌸</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
             --soft-pink: #f4dada;
             --dusty-rose: #d4a5a5;
-            --warm-beige: #fdf5f5;
-            --text-dark: #4a3f3f;
+            --white: #ffffff;
+            --text-dark: #333;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-       body {
-            background: linear-gradient(rgba(253, 245, 245, 0.3), rgba(253, 245, 245, 0.3)), url('sanah2.jpg');
+        body {
+            background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('sanah2.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -29,6 +29,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        /* EKRAN POWITALNY */
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background-color: var(--soft-pink);
@@ -36,40 +37,48 @@
             transition: opacity 0.8s ease-out;
         }
 
-        .gift-btn {
-            background: var(--dusty-rose); color: white; border: none;
-            padding: 20px 40px; font-size: 1.2rem; border-radius: 50px;
-            cursor: pointer; text-transform: uppercase; letter-spacing: 2px;
-        }
-
         /* KARTA */
         .card {
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid var(--soft-pink);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
             border-radius: 30px;
-            width: 100%; max-width: 500px; padding: 40px 30px;
-            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%; max-width: 500px; padding: 50px 40px;
+            text-align: center; box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 5px; color: #333; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; color: var(--dusty-rose); }
         
-        /* Przycisk muzyki pod "Dla Ani" */
-        .music-btn { 
-            display: block; margin: 0 auto 20px auto; font-size: 0.75rem; 
-            color: #888; cursor: pointer; background: none; border: 1px solid #ddd;
-            padding: 4px 12px; border-radius: 20px; text-transform: uppercase;
+        .wishes {
+            margin: 25px 0; font-size: 1.1rem; line-height: 1.8;
+            color: #555; font-weight: 300;
         }
 
-        .wishes {
-            margin: 20px 0; font-size: 1.05rem; line-height: 1.7;
-            text-align: justify; color: #555; font-style: italic;
+        .wishes p { margin-bottom: 15px; }
+
+        /* PRZYCISKI */
+        .btn, .gift-btn, .music-btn {
+            cursor: pointer; border: none; transition: all 0.3s ease;
         }
+
+        .gift-btn {
+            background: var(--dusty-rose); color: white;
+            padding: 20px 40px; font-size: 1.2rem; border-radius: 50px;
+        }
+
+        .music-btn { 
+            background: none; border: 1px solid var(--dusty-rose);
+            color: var(--dusty-rose); padding: 8px 16px; border-radius: 20px;
+            margin-bottom: 20px; font-size: 0.8rem; letter-spacing: 1px;
+        }
+        .music-btn:hover { background: var(--dusty-rose); color: white; }
 
         .btn {
-            display: inline-block; background: var(--dusty-rose); color: white;
-            padding: 15px 30px; border-radius: 50px; text-decoration: none;
-            font-weight: 600; margin-top: 10px; cursor: pointer; border: none;
+            background: var(--dusty-rose); color: white;
+            padding: 18px 35px; border-radius: 50px; font-weight: 600;
+            margin-top: 20px; box-shadow: 0 5px 15px rgba(212, 165, 165, 0.4);
         }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212, 165, 165, 0.6); }
+
     </style>
 </head>
 <body>
@@ -80,14 +89,13 @@
 
     <div class="card">
         <h1>Dla Ani</h1>
-        <button class="music-btn" onclick="toggleMusic()">🎵 Włącz/Wyłącz muzykę</button>
-        
+        <button class="music-btn" onclick="toggleMusic()">🎵 Muzyka (Włącz/Wyłącz)</button>
         <audio id="sanahAudio" src="sanah.mp3" loop></audio>
         
         <div class="wishes">
             <p>Z okazji tak wyjątkowego jubileuszu dziękuję Ci za to, że jesteś. Życzę Ci, abyś zawsze czuła się ważna i kochana. Niech Twoja mądrość i życiowe doświadczenie rozświetlają kolejne lata, a w sercu zawsze niech gra muzyka.</p>
-            <p>Życzę Ci, aby Twoje serce wciąż biło z młodzieńczą pasją, a każdy kolejny dzień przynosił spokój i harmonię. Niech Twoja mądrość, doświadczenie i dobroć, którymi obdarzasz wszystkich wokół, wracają do Ciebie ze zdwojoną siłą.</p>
-            <p style="text-align: center; font-weight: bold; margin-top: 15px;">Bądź szczęśliwa każdego dnia!</p>
+            <p>Życzę Ci, aby Twoje serce wciąż biło z młodzieńczą pasją, a każdy kolejny dzień przynosił spokój i harmonię.</p>
+            <p><strong>Bądź szczęśliwa każdego dnia!</strong></p>
         </div>
 
         <button onclick="odbierzPrezent()" class="btn">Odbierz bilet na koncert 🎫</button>
@@ -97,7 +105,7 @@
         var audio = document.getElementById("sanahAudio");
         
         function openGift() {
-            audio.play().catch(e => {});
+            audio.play().catch(e => console.log("Autoodtwarzanie zablokowane"));
             document.getElementById('welcome-screen').style.opacity = '0';
             setTimeout(() => document.getElementById('welcome-screen').style.display = 'none', 800);
         }
@@ -107,13 +115,11 @@
         }
 
         function odbierzPrezent() {
-            var pin = prompt("Zabezpieczenie antykradzieżowe 🛡️\nPodaj tajne hasło, aby odebrać prezent:");
-            var ukryteHaslo = "YW5pYQ=="; // "ania"
-            
-            if (pin && btoa(pin.toLowerCase()) === ukryteHaslo) {
+            var pin = prompt("Zabezpieczenie 🛡️\nPodaj hasło, aby odebrać prezent:");
+            if (pin && btoa(pin.toLowerCase()) === "YW5pYQ==") {
                 window.open("sanah.jpg", "_blank");
             } else {
-                alert("Pudło! To nie to hasło. Spróbuj jeszcze raz.");
+                alert("Pudło! Spróbuj jeszcze raz.");
             }
         }
     </script>
